@@ -1,21 +1,16 @@
-var clozeCard= function(cloze,text){
+clozeCard = function (text,cloze){
     this.cloze= cloze;
     this.text= text;    
-    this.fulltext=(this.cloze + " "+this.text);
+    this.fulltext=(this.text + " "+this.cloze);
+
+    this.printStats = function(){
+        console.log("..." + this.cloze);
+        console.log( this.text);
+        console.log(this.fulltext);
+        console.log("*----------*");
+    };
 }
 
-var dolphin = new clozeCard("Smell", "is one of the traditional 5 senses Dolphins are believed not to possess");
-var movie= new clozeCard("A brain", "is what the scarcrow wanted from the wizard in the Wizard of Oz");
-console.log(dolphin.text);
-console.log("-----------");
-console.log(dolphin.cloze);
-console.log("------------");
-console.log(dolphin.fulltext);
-console.log("_____________");
 
-console.log(movie.text);
-console.log("------------");
-console.log(movie.cloze);
-console.log("------------");
-console.log(movie.fulltext);
 
+module.exports = clozeCard;
